@@ -1,0 +1,65 @@
+<meta charset="UTF-8">
+
+<big><h1>Programa cálculo IMC</h1></big>
+<hr></hr>
+<script>
+
+    function saltarlinea(){
+
+        document.write("<br>");
+        document.write("<br>");
+        document.write("<br>");
+
+    }
+
+    function imprimir(texto){
+        
+        document.write(texto)
+        saltarlinea()
+
+    }
+
+    function calcularImc(peso,altura){
+
+        return (peso / (altura*altura));
+        
+    }
+
+    var nombre = prompt("Informe su nombre");
+    //hay que tener cuidado con parseInt porque dependiendo como se ingrese los datos los puede truncar y el resultado no va a ser el mismo. 
+    //El problema es que parseInt sirve para números enteros, y la altura en metros tiene decimales, con lo que no te sirve. Podés usar Number() en lugar de parseInt(). La función prompt te devuelve un string (cadena de caracteres). Para estos casos si no usas una función para convertir la cadena en un número el código te va a funcionar siempre y cuando no trates de "suma", ya que el operador "+" concatena. Para las demás operaciones, JS "se da cuenta" de lo que estás tratando de hacer y convierte los strings en números antes de realizar la operación, pero siempre conviene que conviertas explícitamente.
+    var pesoInformado = prompt(nombre + ", informe su peso");
+    var alturaInformado = prompt(nombre + ", informe su altura (ejemplo: 1.76");
+
+    var imcCalculado = calcularImc(pesoInformado,alturaInformado);
+    
+    imprimir(nombre + ", su IMC calculado es " + imcCalculado + ("."));
+
+
+    if(imcCalculado < 18.5){
+        imprimir("IMC abajo de lo recomendado.");
+    }
+
+    if(imcCalculado >= 18.5){
+        if(imcCalculado < 25){
+
+        imprimir("IMC está dentro del intervalo normal.");
+        }
+
+    }
+
+    if(imcCalculado >= 25){
+        if(imcCalculado < 30) {
+        
+        imprimir("IMC considerado como sobrepeso.");
+        }
+
+    }
+
+    if(imcCalculado >= 30){
+        imprimir("IMC considerado como obesidad.")
+    }
+    
+   
+
+</script>
