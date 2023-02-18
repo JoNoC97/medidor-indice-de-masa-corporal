@@ -29,7 +29,7 @@
     //hay que tener cuidado con parseInt porque dependiendo como se ingrese los datos los puede truncar y el resultado no va a ser el mismo. 
     //El problema es que parseInt sirve para números enteros, y la altura en metros tiene decimales, con lo que no te sirve. Podés usar Number() en lugar de parseInt(). La función prompt te devuelve un string (cadena de caracteres). Para estos casos si no usas una función para convertir la cadena en un número el código te va a funcionar siempre y cuando no trates de "suma", ya que el operador "+" concatena. Para las demás operaciones, JS "se da cuenta" de lo que estás tratando de hacer y convierte los strings en números antes de realizar la operación, pero siempre conviene que conviertas explícitamente.
     var pesoInformado = prompt(nombre + ", informe su peso");
-    var alturaInformado = prompt(nombre + ", informe su altura (ejemplo: 1.76");
+    var alturaInformado = prompt(nombre + ", informe su altura (ejemplo: 1.76)");
 
     var imcCalculado = calcularImc(pesoInformado,alturaInformado);
     
